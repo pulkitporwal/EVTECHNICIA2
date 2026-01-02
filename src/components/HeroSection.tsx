@@ -130,7 +130,7 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -145,7 +145,7 @@ const HeroSection = () => {
             <span className="text-xs sm:text-sm uppercase tracking-wider">Scroll to Explore</span>
             <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -43,7 +43,7 @@ const Navbar = () => {
               <img 
                 src={logo} 
                 alt="EVTECHNICIA" 
-                className="w-8 h-8 sm:w-10 sm:h-12 lg:w-auto lg:h-16 object-contain animate-electric-pulse"
+                className="w-8 h-12 sm:w-10 sm:h-12 lg:w-auto lg:h-16 object-contain animate-electric-pulse"
               />
             </div>
             
