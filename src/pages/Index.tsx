@@ -3,10 +3,21 @@ import ParticleBackground from '@/components/ParticleBackground';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
+import ExperienceLikeNoOther from '@/components/ExperienceLikeNoOther';
+import GlobalExhibitors from '@/components/GlobalExhibitors';
+import ProductLaunches from '@/components/ProductLaunches';
+import LiveDemos from '@/components/LiveDemos';
+import Networking from '@/components/Networking';
+import ExpertTalks from '@/components/ExpertTalks';
+import Conference from '@/components/Conference';
+import ShowcaseBrands from '@/components/ShowcaseBrands';
+import ProductCategories from '@/components/ProductCategories';
+import WhereEVMeets from '@/components/WhereEVMeets';
 import CinematicStory from '@/components/CinematicStory';
 import ComponentsSection from '@/components/ComponentsSection';
 import WhyExhibitSection from '@/components/WhyExhibitSection';
 import VisitorsSection from '@/components/VisitorsSection';
+import ConcurrentShow from '@/components/ConcurrentShow';
 import ContactInfoSection from '@/components/ContactInfoSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -41,13 +52,24 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceLikeNoOther />
+        <GlobalExhibitors />
+        <ProductLaunches />
+        <LiveDemos />
+        <Networking />
+        <ExpertTalks />
+        <Conference />
+        <ShowcaseBrands />
+        <ProductCategories />
+        <WhereEVMeets />
         <CinematicStory />
         <ComponentsSection />
         <WhyExhibitSection />
         <VisitorsSection />
-        <ContactSection />
+        <ConcurrentShow />
         <AssociationsAndMedia />
         <ContactInfoSection />
+        <ContactSection />
       </main>
       
       {/* Footer */}
