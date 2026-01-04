@@ -105,9 +105,9 @@ const Navbar = () => {
               <div className="flex items-center gap-3 px-4 py-2 bg-card/50 rounded-lg border border-primary/20 glow-border">
                 <span className="text-sm font-semibold text-foreground/80">Co-located Events: </span>
                 <div className="flex items-center gap-2">
-                  <img src={atLogo} alt="AT" className="h-6 w-auto object-contain" />
+                  <img src={atLogo} alt="AT" className="h-8 w-auto object-contain" />
                   <div className="w-px h-6 bg-primary/30" />
-                  <img src={iaacLogo} alt="IAAC" className="h-6 w-auto object-contain" />
+                  <img src={iaacLogo} alt="IAAC" className="h-8 w-auto object-contain" />
                 </div>
               </div>
 

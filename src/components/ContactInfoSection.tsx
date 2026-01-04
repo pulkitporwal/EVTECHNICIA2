@@ -44,12 +44,11 @@ const ContactInfoSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="contact-info" className="relative md:px-24 sm:pb-20  bg-dark-elevated/50 overflow-hidden">
+    <section id="contact-info" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto"> 
 
           {/* Contact Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

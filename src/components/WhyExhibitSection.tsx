@@ -13,6 +13,7 @@ import {
 import ClickToExhibitButton from '@/components/buttons/ClickToExhibitButton';
 import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
 import KnowMoreButton from '@/components/buttons/KnowMoreButton';
+import BookStallButton from '@/components/buttons/BookStallButton';
 
 const reasons = [
   {
@@ -213,6 +214,19 @@ const WhyExhibitSection = () => {
           >
             <KnowMoreButton 
               onClick={() => window.location.href = '/exhibit'}
+              className="px-8 py-3"
+            />
+          </motion.div>
+
+          {/* Exhibit or Book Stall Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 1.2 }}
+            className="text-center mt-6"
+          >
+            <BookStallButton 
+              onClick={() => window.location.href = '/book-stall'}
               className="px-8 py-3"
             />
           </motion.div>

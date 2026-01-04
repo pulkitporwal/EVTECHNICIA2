@@ -10,7 +10,7 @@ const KnowMoreButton = ({ className = "", onClick }: KnowMoreButtonProps) => {
   return (
     <Button 
       variant="outline"
-      className={`font-medium border border-primary/30 hover:border-primary text-foreground/80 hover:text-primary hover:bg-primary/10 btn-outline-glow ${className}`}
+      className={`font-medium border-2 border-secondary/50 hover:border-secondary bg-secondary/10 hover:bg-secondary/20 text-secondary hover:text-secondary-foreground btn-outline-glow shadow-md hover:shadow-lg transition-all duration-300 ${className}`}
       onClick={onClick}
     >
       Know More

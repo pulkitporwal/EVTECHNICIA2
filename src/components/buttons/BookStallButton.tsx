@@ -9,11 +9,11 @@ interface BookStallButtonProps {
 const BookStallButton = ({ className = "", onClick }: BookStallButtonProps) => {
   return (
     <Button 
-      variant="outline" 
-      className={`font-medium border border-primary/30 hover:border-primary text-foreground/80 hover:text-primary hover:bg-primary/10 btn-outline-glow ${className}`}
+      className={`font-medium bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground btn-glow shadow-lg hover:shadow-xl transition-all duration-300 ${className}`}
       onClick={onClick}
     >
       Book Your Stall
+      <ArrowRight className="ml-2 w-4 h-4" />
     </Button>
   );
 };

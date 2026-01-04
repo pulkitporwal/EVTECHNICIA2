@@ -10,7 +10,7 @@ const RegisterToVisitButton = ({ className = "", onClick }: RegisterToVisitButto
   return (
     <Button 
       variant="outline"
-      className={`font-medium border border-primary/30 hover:border-primary text-foreground/80 hover:text-primary hover:bg-primary/10 btn-outline-glow ${className}`}
+      className={`font-medium border-2 border-primary/50 hover:border-primary bg-primary/10 hover:bg-primary/20 text-primary hover:text-primary-foreground btn-outline-glow shadow-md hover:shadow-lg transition-all duration-300 ${className}`}
       onClick={onClick}
     >
       Register to Visit
