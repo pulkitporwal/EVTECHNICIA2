@@ -47,11 +47,11 @@ const ContactInfoSection = () => {
     <section id="contact-info" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div ref={ref} className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto"> 
 
           {/* Contact Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactCategories.map((category, categoryIndex) => (
               <motion.div
                 key={category.title}

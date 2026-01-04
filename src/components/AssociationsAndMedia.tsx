@@ -31,7 +31,7 @@ const AssociationsAndMedia = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <div ref={ref} className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden md:px-24 px-10">
+    <div ref={ref} className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden px-6">
       {/* Supporting Associations Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
