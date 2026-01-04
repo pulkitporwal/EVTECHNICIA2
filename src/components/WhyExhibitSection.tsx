@@ -10,6 +10,9 @@ import {
   LineChart,
   Trophy
 } from 'lucide-react';
+import ClickToExhibitButton from '@/components/buttons/ClickToExhibitButton';
+import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
+import KnowMoreButton from '@/components/buttons/KnowMoreButton';
 
 const reasons = [
   {
@@ -67,7 +70,7 @@ const WhyExhibitSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="exhibit" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="exhibit" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 circuit-pattern opacity-30" />
       
@@ -176,6 +179,7 @@ const WhyExhibitSection = () => {
                     </li>
                   ))}
                 </ul>
+                <ClickToExhibitButton className="w-full" />
               </div>
 
               {/* Raw Space */}
@@ -195,8 +199,22 @@ const WhyExhibitSection = () => {
                     </li>
                   ))}
                 </ul>
+                <ClickToExhibitButton className="w-full" />
               </div>
             </div>
+          </motion.div>
+
+          {/* Know More Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            className="text-center mt-12"
+          >
+            <KnowMoreButton 
+              onClick={() => window.location.href = '/exhibit'}
+              className="px-8 py-3"
+            />
           </motion.div>
         </div>
       </div>

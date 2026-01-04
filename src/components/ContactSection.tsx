@@ -2,6 +2,8 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPin, Phone, Mail, Globe, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import BookStallButton from '@/components/buttons/BookStallButton';
+import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
 
 const contacts = [
   { name: 'Pallav Singh', phone: '+91-9711182040', email: 'pallav@sdpromomedia.com' },
@@ -14,7 +16,7 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
+    <section id="contact" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 circuit-pattern opacity-30" />
       
@@ -37,6 +39,17 @@ const ContactSection = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Secure your space at India's premier EV components exhibition. Connect with our team for personalized assistance.
             </p>
+            
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+            >
+              <BookStallButton />
+              <RegisterToVisitButton />
+            </motion.div>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -159,19 +172,6 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-foreground/80 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
-                        placeholder="Company name"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-foreground/80 mb-2">
                         Email
                       </label>
                       <input
@@ -180,29 +180,17 @@ const ContactSection = () => {
                         placeholder="email@example.com"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-foreground/80 mb-2">
-                        Phone
-                      </label>
-                      <input
-                        type="tel"
-                        className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
-                        placeholder="+91-XXXXXXXXXX"
-                      />
-                    </div>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground/80 mb-2">
-                      Interest
+                      Phone
                     </label>
-                    <select className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground">
-                      <option value="">Select your interest</option>
-                      <option value="exhibit">Exhibit at the Expo</option>
-                      <option value="visit">Visit as Trade Visitor</option>
-                      <option value="sponsor">Sponsorship Opportunity</option>
-                      <option value="other">Other</option>
-                    </select>
+                    <input
+                      type="tel"
+                      className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
+                      placeholder="+91-XXXXXXXXXX"
+                    />
                   </div>
                   
                   <div>

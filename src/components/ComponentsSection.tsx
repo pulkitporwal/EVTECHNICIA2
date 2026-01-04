@@ -52,7 +52,7 @@ const ComponentsSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="components" className="relative py-24 md:py-32 bg-dark-elevated/50 overflow-hidden">
+    <section id="components" className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       

@@ -15,7 +15,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-32 pb-16 md:pb-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 md:pt-24 pb-16 md:pb-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,9 +59,7 @@ const HeroSection = () => {
                 transition={{ delay: 0.5, duration: 0.6 }}
                 className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 lg:mb-8 text-center lg:text-left max-w-2xl lg:max-w-none mx-auto lg:mx-0"
               >
-                Expo on <span className="text-primary">EV Components</span> & Function
-                <br className="hidden sm:block" />
-                <span className="text-sm sm:text-base md:text-lg">Powering the Electric Revolution</span>
+                <span className="text-primary">EV Components & Complete Eco-System on Display:</span> Powering the Electric Revolution
               </motion.p>
 
               {/* Event Info */}

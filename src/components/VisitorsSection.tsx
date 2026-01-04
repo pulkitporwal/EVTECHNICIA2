@@ -14,6 +14,7 @@ import {
   Plug,
   Users
 } from 'lucide-react';
+import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
 
 const visitorProfiles = [
   { icon: Car, label: 'EV OEMs' },
@@ -54,7 +55,7 @@ const VisitorsSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="visitors" className="relative py-24 md:py-32 bg-dark-elevated/50 overflow-hidden">
+    <section id="visitors" className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       
@@ -104,6 +105,16 @@ const VisitorsSection = () => {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Register to Visit Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-center mb-12"
+          >
+            <RegisterToVisitButton className="px-8 py-3" />
           </motion.div>
 
           {/* What to Expect */}

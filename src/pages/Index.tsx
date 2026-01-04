@@ -7,8 +7,10 @@ import CinematicStory from '@/components/CinematicStory';
 import ComponentsSection from '@/components/ComponentsSection';
 import WhyExhibitSection from '@/components/WhyExhibitSection';
 import VisitorsSection from '@/components/VisitorsSection';
+import ContactInfoSection from '@/components/ContactInfoSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AssociationsAndMedia from '@/components/AssociationsAndMedia';
 
 const Index = () => {
   useEffect(() => {
@@ -44,6 +46,8 @@ const Index = () => {
         <WhyExhibitSection />
         <VisitorsSection />
         <ContactSection />
+        <AssociationsAndMedia />
+        <ContactInfoSection />
       </main>
       
       {/* Footer */}
