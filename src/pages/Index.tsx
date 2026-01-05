@@ -52,7 +52,6 @@ const Index = () => {
         <CinematicStory />
         <ComponentsSection />
         <WhyExhibitSection />
-        <VisitorsSection />
         <ContactSection />
         <AssociationsAndMedia />
         <ContactInfoSection />
