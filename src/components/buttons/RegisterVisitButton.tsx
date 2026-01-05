@@ -12,7 +12,7 @@ const RegisterVisitButton = ({ className = "", onClick }: RegisterVisitButtonPro
       className={`font-medium bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground btn-glow ${className}`}
       onClick={onClick}
     >
-      Reserve your space
+      Register as Visitor
       <ArrowRight className="ml-2 w-4 h-4" />
     </Button>
   );

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Facebook, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react';
+import { Menu, X, Facebook, Instagram, Linkedin, Twitter, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import BookStallButton from '@/components/buttons/BookStallButton';
 import RegisterVisitButton from '@/components/buttons/RegisterVisitButton';
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState(false);
+  const [openSubmenus, setOpenSubmenus] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,12 +33,23 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen, isDesktopMenuOpen]);
 
+  const toggleSubmenu = (key: string) => {
+    setOpenSubmenus(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#components', label: 'Components' },
-    { href: '#exhibit', label: 'Why Exhibit' },
-    { href: '#visitors', label: 'Visitors' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/about', label: 'About', hasSubmenu: true, submenu: [
+      { href: '/about', label: 'About EVTECHNICIA' },
+      { href: '/about-organizer', label: 'About Organizer' }
+    ]},
+    { href: '/exhibit', label: 'Exhibit' },
+    { href: '/visitors', label: 'Visitors' },
+    { href: '/market', label: 'Market' },
+    { href: '/downloads', label: 'Downloads' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const socialLinks = [
@@ -90,7 +102,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <a href="#">
+              <a href="/">
                 <img 
                   src={logo} 
                   alt="Logo" 
@@ -188,14 +200,54 @@ const Navbar = () => {
                   {/* Navigation Links */}
                   <div className="space-y-2">
                     {navLinks.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setIsDesktopMenuOpen(false)}
-                        className="block text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg transition-all duration-200"
-                      >
-                        {link.label}
-                      </a>
+                      <div key={link.href}>
+                        {link.hasSubmenu ? (
+                          <div>
+                            <button
+                              onClick={() => toggleSubmenu(link.href)}
+                              className="flex items-center justify-between w-full text-base font-medium text-foreground/80 py-3 px-4 rounded-lg hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                            >
+                              {link.label}
+                              <ChevronDown 
+                                className={`w-4 h-4 transition-transform duration-200 ${
+                                  openSubmenus[link.href] ? 'rotate-180' : ''
+                                }`}
+                              />
+                            </button>
+                            <AnimatePresence>
+                              {openSubmenus[link.href] && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="ml-4 space-y-1 overflow-hidden"
+                                >
+                                  {link.submenu.map((subItem) => (
+                                    <a
+                                      key={subItem.href}
+                                      href={subItem.href}
+                                      onClick={() => setIsDesktopMenuOpen(false)}
+                                      className="flex items-center text-sm text-foreground/60 hover:text-primary hover:bg-primary/10 py-2 px-4 rounded-lg transition-all duration-200"
+                                    >
+                                      <ChevronRight className="w-3 h-3 mr-2" />
+                                      {subItem.label}
+                                    </a>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ) : (
+                          <a
+                            href={link.href}
+                            onClick={() => setIsDesktopMenuOpen(false)}
+                            className="block text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg transition-all duration-200"
+                          >
+                            {link.label}
+                          </a>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -260,14 +312,35 @@ const Navbar = () => {
                   {/* Navigation Links */}
                   <div className="space-y-2">
                     {navLinks.map((link) => (
-                      <a
-                        key={link.href}
-                        href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg transition-all duration-200"
-                      >
-                        {link.label}
-                      </a>
+                      <div key={link.href}>
+                        {link.hasSubmenu ? (
+                          <div>
+                            <div className="text-base font-medium text-foreground/80 py-3 px-4 rounded-lg">
+                              {link.label}
+                            </div>
+                            <div className="ml-4 space-y-1">
+                              {link.submenu.map((subItem) => (
+                                <a
+                                  key={subItem.href}
+                                  href={subItem.href}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                  className="block text-sm text-foreground/60 hover:text-primary hover:bg-primary/10 py-2 px-4 rounded-lg transition-all duration-200"
+                                >
+                                  {subItem.label}
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <a
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg transition-all duration-200"
+                          >
+                            {link.label}
+                          </a>
+                        )}
+                      </div>
                     ))}
                   </div>
 

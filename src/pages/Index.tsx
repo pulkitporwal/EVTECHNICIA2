@@ -4,14 +4,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ExperienceLikeNoOther from '@/components/ExperienceLikeNoOther';
-import GlobalExhibitors from '@/components/GlobalExhibitors';
-import ProductLaunches from '@/components/ProductLaunches';
-import LiveDemos from '@/components/LiveDemos';
-import Networking from '@/components/Networking';
-import ExpertTalks from '@/components/ExpertTalks';
-import Conference from '@/components/Conference';
 import ShowcaseBrands from '@/components/ShowcaseBrands';
-import ProductCategories from '@/components/ProductCategories';
 import WhereEVMeets from '@/components/WhereEVMeets';
 import CinematicStory from '@/components/CinematicStory';
 import ComponentsSection from '@/components/ComponentsSection';
@@ -27,7 +20,7 @@ const Index = () => {
   useEffect(() => {
     // Update document title
     document.title = 'EVTECHNICIA 2026 | EV Components & Function Expo | Mumbai, India';
-    
+
     // Add meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -44,34 +37,27 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Particle Background */}
       <ParticleBackground />
-      
+
       {/* Navigation */}
       <Navbar />
-      
+
       {/* Main Content */}
       <main>
         <HeroSection />
         <AboutSection />
         <ExperienceLikeNoOther />
-        <GlobalExhibitors />
-        <ProductLaunches />
-        <LiveDemos />
-        <Networking />
-        <ExpertTalks />
-        <Conference />
         <ShowcaseBrands />
-        <ProductCategories />
         <WhereEVMeets />
+        <ConcurrentShow />
         <CinematicStory />
         <ComponentsSection />
         <WhyExhibitSection />
         <VisitorsSection />
-        <ConcurrentShow />
+        <ContactSection />
         <AssociationsAndMedia />
         <ContactInfoSection />
-        <ContactSection />
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>

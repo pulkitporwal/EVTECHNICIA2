@@ -152,40 +152,6 @@ const WhereEVMeets = () => {
             </div>
           </motion.div>
 
-          {/* Additional Visitors */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mb-16"
-          >
-            <h3 className="font-orbitron text-2xl font-bold text-center mb-8">
-              Additional <span className="text-accent">Visitors</span>
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {additionalVisitors.map((visitor, index) => (
-                <motion.div
-                  key={visitor.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 0.7 + index * 0.05 }}
-                  className="glow-card rounded-xl p-5 text-center group hover:border-primary/50 transition-all duration-500 h-full"
-                >
-                  <div className="w-10 h-10 mx-auto rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-3">
-                    <visitor.icon className="w-5 h-5 text-accent" />
-                  </div>
-                  <h5 className="font-semibold text-foreground text-sm mb-2 group-hover:text-primary transition-colors">
-                    {visitor.title}
-                  </h5>
-                  <div className="text-lg font-bold text-accent mb-2">{visitor.percentage}</div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {visitor.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Benefits Section */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}

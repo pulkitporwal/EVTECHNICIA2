@@ -88,26 +88,7 @@ const ShowcaseBrands = () => {
             </p>
           </motion.div>
 
-          {/* Market Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="glow-card rounded-2xl p-6 h-full group hover:border-primary/50 transition-all duration-500">
-                  <div className="w-16 h-16 mx-auto rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                    <stat.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <div className="font-orbitron text-2xl font-bold text-primary mb-2">{stat.value}</div>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+    
 
           {/* Opportunities */}
           <motion.div
@@ -116,9 +97,6 @@ const ShowcaseBrands = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mb-16"
           >
-            <h3 className="font-orbitron text-2xl font-bold text-center mb-8">
-              Why <span className="text-primary">Exhibit</span>
-            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {opportunities.map((opportunity, index) => (
                 <motion.div
