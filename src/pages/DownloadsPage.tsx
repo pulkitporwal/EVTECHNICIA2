@@ -17,36 +17,41 @@ const DownloadsPage = () => {
       title: 'Download Brochure',
       description: 'Explore event highlights, exhibitor listings, and must-know details',
       action: 'Download Now',
+      filePath: '/documents/brochure.pdf',
     },
     {
       icon: FileText,
-      title: 'Contract Form',
+      title: 'Domestic Contract Form',
       description: 'Complete contract for booth booking and participation',
       action: 'Download Now',
+      filePath: '/documents/domestic-contract-form.pdf',
+    },
+    {
+      icon: FileText,
+      title: 'International Contract Form',
+      description: 'For international exhibitors participation',
+      action: 'Download Now',
+      filePath: '/documents/international-contract-form.pdf',
     },
     {
       icon: Shield,
       title: 'Rules & Regulations',
       description: 'Get familiar with event rules and safety protocols',
       action: 'Download Now',
-    },
-    {
-      icon: FileText,
-      title: 'Post Show Report AutoTechnicia 2025',
-      description: 'Review comprehensive post-event analysis and insights',
-      action: 'Download Now',
+      filePath: '/documents/rulesandregulations.pdf',
     },
   ];
+
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative py-20 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-30" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -63,7 +68,7 @@ const DownloadsPage = () => {
                 Everything You Need, <span className="text-gradient">All in One Place</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-5xl mx-auto leading-relaxed mb-12">
-                Access brochures, floorplans, contact forms, and key resources to help you prepare for EVTECHNICIA. 
+                Access brochures, floorplans, contact forms, and key resources to help you prepare for EVTECHNICIA.
                 Whether you're exhibiting or visiting, find all the information you need to make the most of your experience.
               </p>
             </motion.div>
@@ -82,8 +87,8 @@ const DownloadsPage = () => {
               className="text-center mb-16"
             >
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                   <ClickToExhibitButton />
-                  <RegisterAsVisitorButton /> 
+                <ClickToExhibitButton />
+                <RegisterAsVisitorButton />
               </div>
             </motion.div>
           </div>
@@ -93,7 +98,7 @@ const DownloadsPage = () => {
       {/* Main Downloads */}
       <section className="relative py-16 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-20" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -125,10 +130,17 @@ const DownloadsPage = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                     {download.description}
                   </p>
-                  <button className="px-6 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg transition-all duration-300 flex items-center mx-auto group">
+                  <a
+                    href={download.filePath}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg transition-all duration-300 flex items-center mx-auto group"
+                  >
                     {download.action}
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </a>
+
                 </motion.div>
               ))}
             </div>
@@ -139,7 +151,7 @@ const DownloadsPage = () => {
       {/* Resource Features */}
       <section className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-20" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -211,7 +223,7 @@ const DownloadsPage = () => {
       {/* Final CTA */}
       <section className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-30" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -228,15 +240,15 @@ const DownloadsPage = () => {
                   Join thousands of industry professionals at India's premier EV aftermarket exhibition.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                      <ClickToExhibitButton />
-                  <RegisterAsVisitorButton /> 
+                  <ClickToExhibitButton />
+                  <RegisterAsVisitorButton />
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-      
+
       {/* Contact Info */}
       <ContactInfoSection />
 

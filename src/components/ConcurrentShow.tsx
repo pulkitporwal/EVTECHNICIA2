@@ -54,13 +54,6 @@ const ConcurrentShow = () => {
     },
   ];
 
-  const stats = [
-    { value: '2', label: 'Co-located Shows', icon: Award },
-    { value: '1', label: 'Ticket Access', icon: Calendar },
-    { value: '100%', label: 'Vehicle Coverage', icon: Car },
-    { value: '∞', label: 'Opportunities', icon: Users },
-  ];
-
   return (
     <section id="concurrent-show" className="relative py-16 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
       {/* Background */}
@@ -159,54 +152,6 @@ const ConcurrentShow = () => {
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="text-center"
-              >
-                <div className="glow-card rounded-2xl p-6 h-full group hover:border-primary/50 transition-all duration-500">
-                  <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-500">
-                    <stat.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="font-orbitron text-2xl font-bold text-primary mb-2">{stat.value}</div>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="text-center"
-          >
-            <div className="glow-card rounded-2xl p-8 max-w-3xl mx-auto border-primary/30">
-              <h3 className="font-orbitron text-xl font-bold mb-4 text-foreground">
-                Walk Through <span className="text-primary">Both Halls</span>
-              </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                You don't have to choose between "old world" and "new world". 
-                You can walk through hall and build a portfolio that profits from both. 
-                One ticket, two technologies and infinite opportunities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg font-medium btn-glow transition-all duration-300">
-                  Get Dual Access Pass
-                </button>
-                <button className="px-8 py-3 border-2 border-secondary/50 hover:border-secondary bg-secondary/10 hover:bg-secondary/20 text-secondary hover:text-secondary-foreground rounded-lg font-medium transition-all duration-300">
-                  Learn More
-                </button>
               </div>
             </div>
           </motion.div>

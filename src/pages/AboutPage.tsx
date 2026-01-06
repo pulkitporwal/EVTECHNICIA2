@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Zap, Globe, Users, Award, TrendingUp, Target, Handshake, Lightbulb, Battery, Car, Wrench, Plug } from 'lucide-react';
+import { Zap, Globe, Users, Award, TrendingUp, Target, Handshake, Lightbulb, Battery, Car, Wrench, Plug, ShowerHead } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfoSection from '@/components/ContactInfoSection';
@@ -70,8 +70,9 @@ const AboutPage = () => {
     const stats = [
         { value: '200+', label: 'Exhibitors', icon: Globe },
         { value: '12K+', label: 'Trade Visitors', icon: Users },
-        { value: '25+', label: 'Countries', icon: Target },
+        { value: '10+', label: 'Countries', icon: Target },
         { value: '3', label: 'Days of Innovation', icon: Award },
+        { value: '10+', label: 'Conference Session', icon: ShowerHead },
     ];
 
     return (
@@ -105,7 +106,7 @@ const AboutPage = () => {
                             </p>
 
                             {/* Stats */}
-                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12">
+                            <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 mb-12">
                                 {stats.map((stat, index) => (
                                     <motion.div
                                         key={stat.label}

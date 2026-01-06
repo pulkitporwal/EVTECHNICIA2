@@ -5,8 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfoSection from '@/components/ContactInfoSection';
 import AssociationsAndMedia from '@/components/AssociationsAndMedia';
-import BookStallButton from '@/components/buttons/BookStallButton';
-import RegisterToVisitButton from '@/components/buttons/RegisterVisitButton';
+import ClickToExhibitButton from '@/components/forms/ExhibitorRegistrationForm';
 
 const ExhibitPage = () => {
   const ref = useRef(null);
@@ -256,10 +255,7 @@ const ExhibitPage = () => {
                   their businesses to electric vehicles. Secure your booth today and gain access to the exclusive "transition" audience.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <ClickToExhibitButton
-                    onClick={() => window.location.href = '/book-stall'}
-                    className="px-8 py-4 text-lg"
-                  />
+                  <ClickToExhibitButton />
                 </div>
               </div>
             </motion.div>

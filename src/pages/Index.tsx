@@ -14,6 +14,7 @@ import ConcurrentShow from '@/components/ConcurrentShow';
 import ContactInfoSection from '@/components/ContactInfoSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import AssociationsAndMedia from '@/components/AssociationsAndMedia';
 
 const Index = () => {
   useEffect(() => {
@@ -52,6 +53,7 @@ const Index = () => {
         <ComponentsSection />
         <WhyExhibitSection />
         <ContactSection />
+        <AssociationsAndMedia />
         <ContactInfoSection />
       </main>
 

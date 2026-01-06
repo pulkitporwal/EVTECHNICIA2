@@ -1,11 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-  Rocket, 
-  Award, 
-  Users, 
-  Handshake, 
-  Megaphone, 
+import {
+  Rocket,
+  Award,
+  Users,
+  Handshake,
+  Megaphone,
   Target,
   LineChart,
   Trophy
@@ -72,7 +72,7 @@ const WhyExhibitSection = () => {
     <section id="exhibit" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 circuit-pattern opacity-30" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -98,7 +98,7 @@ const WhyExhibitSection = () => {
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
             <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-accent to-secondary opacity-30" />
-            
+
             {/* Timeline Items */}
             <div className="space-y-12">
               {reasons.map((reason, index) => (
@@ -107,30 +107,28 @@ const WhyExhibitSection = () => {
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                  className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
                 >
                   {/* Timeline Dot */}
                   <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary z-10">
                     <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20" />
                   </div>
-                  
+
                   {/* Content Card */}
-                  <div className={`ml-16 md:ml-0 md:w-5/12 ${
-                    index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
-                  }`}>
+                  <div className={`ml-16 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                    }`}>
                     <div className="glow-card rounded-2xl p-6 transition-all duration-500 hover:border-primary/50">
                       {/* Number Badge */}
                       <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-xs font-bold font-orbitron">
                         {index + 1}
                       </div>
-                      
+
                       {/* Icon */}
                       <div className={`w-12 h-12 rounded-xl bg-${reason.color}/10 border border-${reason.color}/30 flex items-center justify-center mb-4 group-hover:shadow-[0_0_25px_hsl(var(--${reason.color})/0.3)] transition-all duration-500`}>
                         <reason.icon className={`w-6 h-6 text-${reason.color}`} />
                       </div>
-                      
+
                       {/* Content */}
                       <h3 className="font-orbitron text-lg font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
                         {reason.title}
@@ -140,7 +138,7 @@ const WhyExhibitSection = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block md:w-5/12" />
                 </motion.div>
@@ -158,7 +156,7 @@ const WhyExhibitSection = () => {
             <h3 className="font-orbitron text-2xl font-bold text-center mb-10">
               Space <span className="text-primary">Tariff</span>
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Built-up Space */}
               <div className="glow-card rounded-2xl p-8 border-primary/30 hover:border-primary/60 transition-all duration-500">
@@ -171,14 +169,16 @@ const WhyExhibitSection = () => {
                   <span className="text-muted-foreground text-sm ml-2">+ GST (18%)</span>
                 </div>
                 <ul className="space-y-3 mb-8">
-                  {['1 Table & 3 Chairs', '3 Spot Lights', '1KW Power Socket', 'White Walls', 'Paper Dustbin & Carpet'].map((item) => (
+                  {['1 Table & 3 Chairs', '3 Spot Lights', '1KW Power Socket', 'Paper Dustbin & Carpet'].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm text-foreground/80">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {item}
                     </li>
                   ))}
                 </ul>
-    <ClickToExhibitButton />
+                <div className="w-full">
+                  <ClickToExhibitButton className="w-full" />
+                </div>
               </div>
 
               {/* Raw Space */}
@@ -198,33 +198,13 @@ const WhyExhibitSection = () => {
                     </li>
                   ))}
                 </ul>
-                <ClickToExhibitButton className="w-full" />
+                <div className="w-full">
+                  <ClickToExhibitButton className="w-full" />
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Know More Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="text-center mt-12"
-          >
-            <KnowMoreButton 
-              onClick={() => window.location.href = '/exhibit'}
-              className="px-8 py-3"
-            />
-          </motion.div>
-
-          {/* Exhibit or Book Stall Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="text-center mt-6"
-          >
-                <ClickToExhibitButton />
-          </motion.div>
         </div>
       </div>
     </section>

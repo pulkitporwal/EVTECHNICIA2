@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfoSection from '@/components/ContactInfoSection';
 import AssociationsAndMedia from '@/components/AssociationsAndMedia';
+import ClickToExhibitButton from '@/components/forms/ExhibitorRegistrationForm';
 
 const AboutOrganizerPage = () => {
     const heroRef = useRef(null);
@@ -22,49 +23,49 @@ const AboutOrganizerPage = () => {
             title: 'ASIA LABEX',
             description: 'Laboratory Equipment Exhibition',
             img: '/sd-events/asia-lab-x.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'EV TECHNICIA',
             description: 'Electric Vehicle Components Expo',
             img: '/sd-events/ev-technicia-black.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'NEPAL LAB',
             description: 'Nepal Laboratory Exhibition',
             img: '/sd-events/NEPALLAB-2026-1.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'LABOTICA CONCLAVE',
             description: 'Laboratory Technology Conference',
             img: '/sd-events/LOBOTIKA-CONCLAVE.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'OPHTHALMIC',
             description: 'Ophthalmic Medical Exhibition',
             img: '/sd-events/Ophthall_2026-logo.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'MEDICAL',
             description: 'Medical Equipment Expo',
             img: '/sd-events/india-med-expo.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'AUTO TECHNICIA',
             description: 'Automotive Technology Exhibition',
             img: '/sd-events/AT-Header-Logo-Large.webp',
-            year: '2023',
+            year: '----',
         },
         {
             title: 'MINGLE MEDICAL',
             description: 'Medical Innovation Exhibition',
             img: '/sd-events/bangla-med-expo.webp',
-            year: '2023',
+            year: '----',
         },
     ];
 
@@ -255,7 +256,7 @@ const AboutOrganizerPage = () => {
                             className="text-center"
                         >
                             <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-6">
-                                Reserve Your Spot At <span className="text-gradient">AUTOTECHNICIA</span> Today!
+                                Reserve Your Spot At <span className="text-gradient">EV TECHNICIA</span> Today!
                             </h2>
                             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
                                 Secure your exhibition space at India's premier automotive technology showcase.
@@ -263,21 +264,7 @@ const AboutOrganizerPage = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                                <button
-                                    type="button"
-                                    className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg font-medium btn-glow transition-all duration-300"
-                                    aria-label="Reserve your exhibition space"
-                                >
-                                    Reserve Your Space
-                                    <ArrowRight className="ml-2 w-5 h-5" />
-                                </button>
-                                <button
-                                    type="button"
-                                    className="px-8 py-4 border-2 border-primary/50 hover:border-primary bg-primary/10 hover:bg-primary/20 text-primary hover:text-primary-foreground rounded-lg font-medium transition-all duration-300"
-                                    aria-label="View 2023 post show report"
-                                >
-                                    2023 POST SHOW REPORT
-                                </button>
+                               <ClickToExhibitButton />
                             </div>
                         </motion.div>
                     </div>
