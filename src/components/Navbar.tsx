@@ -52,7 +52,7 @@ const Navbar = () => {
     { href: '/market', label: 'Market' },
     { href: '/downloads', label: 'Downloads' },
     { href: '/other-information', label: 'Other Information' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/#contact', label: 'Contact' },
   ];
 
   const socialLinks = [
