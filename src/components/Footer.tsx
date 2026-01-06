@@ -115,8 +115,6 @@ const Footer = () => {
                 © 2026 EVTECHNICIA. All rights reserved.
               </p>
               <div className="flex items-center gap-6 text-sm">
-                <a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#refund" className="text-muted-foreground hover:text-primary transition-colors">Refund Policy</a>
               </div>
             </div>
           </div>
