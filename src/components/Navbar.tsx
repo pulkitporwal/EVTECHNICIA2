@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Facebook, Instagram, Linkedin, Twitter, ArrowRight, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BookStallButton from '@/components/buttons/BookStallButton';
-import RegisterVisitButton from '@/components/buttons/RegisterVisitButton';
 import logo from '@/assets/logo.png';
 import atLogo from '@/assets/at-h.webp';
 import iaacLogo from '@/assets/IAAC.webp';
+import ClickToExhibitButton from './forms/ExhibitorRegistrationForm';
+import RegisterAsVisitorButton from './forms/VisitorRegistrationForm';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,14 +41,17 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { href: '/about', label: 'About', hasSubmenu: true, submenu: [
-      { href: '/about', label: 'About EVTECHNICIA' },
-      { href: '/about-organizer', label: 'About Organizer' }
-    ]},
+    {
+      href: '/about', label: 'About', hasSubmenu: true, submenu: [
+        { href: '/about', label: 'About EVTECHNICIA' },
+        { href: '/about-organizer', label: 'About Organizer' }
+      ]
+    },
     { href: '/exhibit', label: 'Exhibit' },
     { href: '/visitors', label: 'Visitors' },
     { href: '/market', label: 'Market' },
     { href: '/downloads', label: 'Downloads' },
+    { href: '/other-information', label: 'Other Information' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -92,20 +95,19 @@ const Navbar = () => {
 
       {/* Main Navbar */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
             ? 'bg-background/95 backdrop-blur-md shadow-[0_4px_30px_hsl(var(--primary)/0.1)] border-b border-primary/20'
             : 'bg-background/80 backdrop-blur-sm border-b border-primary/10'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/">
-                <img 
-                  src={logo} 
-                  alt="Logo" 
+                <img
+                  src={logo}
+                  alt="Logo"
                   className="h-20 py-1 w-auto object-contain"
                 />
               </a>
@@ -124,8 +126,8 @@ const Navbar = () => {
               </div>
 
               {/* CTA Buttons */}
-              <BookStallButton onClick={() => setIsDesktopMenuOpen(false)} />
-              <RegisterVisitButton onClick={() => setIsDesktopMenuOpen(false)} />
+              <ClickToExhibitButton />
+              <RegisterAsVisitorButton />
 
               {/* EXPO MENU Button */}
               <button
@@ -208,10 +210,9 @@ const Navbar = () => {
                               className="flex items-center justify-between w-full text-base font-medium text-foreground/80 py-3 px-4 rounded-lg hover:text-primary hover:bg-primary/10 transition-all duration-200"
                             >
                               {link.label}
-                              <ChevronDown 
-                                className={`w-4 h-4 transition-transform duration-200 ${
-                                  openSubmenus[link.href] ? 'rotate-180' : ''
-                                }`}
+                              <ChevronDown
+                                className={`w-4 h-4 transition-transform duration-200 ${openSubmenus[link.href] ? 'rotate-180' : ''
+                                  }`}
                               />
                             </button>
                             <AnimatePresence>
@@ -254,8 +255,8 @@ const Navbar = () => {
 
                 {/* Footer CTA */}
                 <div className="p-6 border-t border-primary/20 space-y-3 bg-gradient-to-r from-card to-dark-surface">
-                  <BookStallButton onClick={() => setIsDesktopMenuOpen(false)} />
-                  <RegisterVisitButton onClick={() => setIsDesktopMenuOpen(false)} />
+                  <ClickToExhibitButton />
+                  <RegisterAsVisitorButton />
                 </div>
               </div>
             </motion.div>
@@ -273,7 +274,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              onClick={() => setIsMobileMenuOpen(false)}
+
               className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 lg:hidden"
             />
 
@@ -290,7 +291,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between p-6 border-b border-primary/20 bg-gradient-to-r from-card to-dark-surface">
                   <h2 className="text-xl font-bold text-foreground font-orbitron glow-text">Menu</h2>
                   <button
-                    onClick={() => setIsMobileMenuOpen(false)}
+
                     className="p-2 text-foreground/70 hover:text-primary hover:bg-primary/10 rounded-lg transition-colors"
                   >
                     <X className="w-6 h-6" />
@@ -323,7 +324,7 @@ const Navbar = () => {
                                 <a
                                   key={subItem.href}
                                   href={subItem.href}
-                                  onClick={() => setIsMobileMenuOpen(false)}
+
                                   className="block text-sm text-foreground/60 hover:text-primary hover:bg-primary/10 py-2 px-4 rounded-lg transition-all duration-200"
                                 >
                                   {subItem.label}
@@ -334,7 +335,7 @@ const Navbar = () => {
                         ) : (
                           <a
                             href={link.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
+
                             className="block text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10 py-3 px-4 rounded-lg transition-all duration-200"
                           >
                             {link.label}
@@ -364,8 +365,8 @@ const Navbar = () => {
 
                 {/* Footer CTA */}
                 <div className="p-6 border-t border-primary/20 space-y-3 bg-gradient-to-r from-card to-dark-surface">
-                  <BookStallButton onClick={() => setIsMobileMenuOpen(false)} />
-                  <RegisterVisitButton onClick={() => setIsMobileMenuOpen(false)} />
+                  <ClickToExhibitButton />
+                  <RegisterAsVisitorButton /> 
                 </div>
               </div>
             </motion.div>

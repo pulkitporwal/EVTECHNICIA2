@@ -10,10 +10,8 @@ import {
   LineChart,
   Trophy
 } from 'lucide-react';
-import ClickToExhibitButton from '@/components/buttons/ClickToExhibitButton';
-import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
 import KnowMoreButton from '@/components/buttons/KnowMoreButton';
-import BookStallButton from '@/components/buttons/BookStallButton';
+import ClickToExhibitButton from './forms/ExhibitorRegistrationForm';
 
 const reasons = [
   {
@@ -180,7 +178,7 @@ const WhyExhibitSection = () => {
                     </li>
                   ))}
                 </ul>
-                <ClickToExhibitButton className="w-full" />
+    <ClickToExhibitButton />
               </div>
 
               {/* Raw Space */}
@@ -225,10 +223,7 @@ const WhyExhibitSection = () => {
             transition={{ duration: 0.6, delay: 1.2 }}
             className="text-center mt-6"
           >
-            <BookStallButton 
-              onClick={() => window.location.href = '/book-stall'}
-              className="px-8 py-3"
-            />
+                <ClickToExhibitButton />
           </motion.div>
         </div>
       </div>

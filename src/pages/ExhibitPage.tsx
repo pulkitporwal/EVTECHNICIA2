@@ -256,7 +256,7 @@ const ExhibitPage = () => {
                   their businesses to electric vehicles. Secure your booth today and gain access to the exclusive "transition" audience.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <BookStallButton 
+                  <ClickToExhibitButton
                     onClick={() => window.location.href = '/book-stall'}
                     className="px-8 py-4 text-lg"
                   />

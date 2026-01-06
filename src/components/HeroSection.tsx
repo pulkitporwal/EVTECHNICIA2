@@ -1,10 +1,53 @@
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, ArrowDown } from 'lucide-react';
+import { MapPin, Calendar, ArrowDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import CountdownTimer from './CountdownTimer';
-import heroImage from '@/assets/download.png';
+import { useState, useCallback, useEffect } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+
+import twoWheeler from '@/assets/2-wheeler.png';
+import threeWheeler from '@/assets/3-wheeler.png';
+import download from '@/assets/download.png';
 
 const HeroSection = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const slides = [
+    { image: twoWheeler, alt: "2-Wheeler EV Components" },
+    { image: threeWheeler, alt: "3-Wheeler EV Components" },
+    { image: download, alt: "EV Components Exhibition" }
+  ];
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+  }, [emblaApi, onSelect]);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!emblaApi) return;
+    const autoplay = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 4000);
+    return () => clearInterval(autoplay);
+  }, [emblaApi]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}
@@ -96,20 +139,64 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Right Column - Image */}
+            {/* Right Column - Image Carousel */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="relative order-first lg:order-last"
             >
-              <div className="relative rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl glow-border max-w-md mx-auto lg:max-w-none">
-                <img
-                  src={heroImage}
-                  alt="EV Components Exhibition"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+              {/* Main Carousel Container with Premium Styling */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-transparent backdrop-blur-sm">
+                {/* Glowing Border Effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 blur-xl" />
+
+                {/* Carousel */}
+                <div className="relative overflow-hidden rounded-2xl" ref={emblaRef}>
+                  <div className="flex">
+                    {slides.map((slide, index) => (
+                      <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+                        {/* Image with enhanced styling */}
+                        <div className="relative bg-gradient-to-br from-background via-dark-elevated to-background p-8 md:p-12">
+                          <img
+                            src={slide.image}
+                            alt={slide.alt}
+                            className="w-full h-auto object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                            style={{ maxHeight: '290px' }}
+                          />
+
+                          {/* Radial glow behind image */}
+
+                          {/* Tech grid overlay */}
+                          <div className="absolute inset-0 opacity-5" style={{
+                            backgroundImage: 'linear-gradient(rgba(0, 240, 255, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.3) 1px, transparent 1px)',
+                            backgroundSize: '40px 40px'
+                          }} />
+                        </div>
+
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Dot Indicators - Enhanced */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                  {slides.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`h-2 rounded-full transition-all duration-300 ${index === selectedIndex
+                          ? 'bg-primary w-10 shadow-lg shadow-primary/50'
+                          : 'bg-foreground/30 w-2 hover:bg-foreground/50 hover:w-4'
+                        }`}
+                      onClick={() => emblaApi?.scrollTo(index)}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                {/* Corner accent decorations */}
+                <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-primary/30 rounded-tl-2xl" />
+                <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-primary/30 rounded-br-2xl" />
               </div>
             </motion.div>
           </div>

@@ -5,8 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfoSection from '@/components/ContactInfoSection';
 import AssociationsAndMedia from '@/components/AssociationsAndMedia';
-import BookStallButton from '@/components/buttons/BookStallButton';
-import RegisterToVisitButton from '@/components/buttons/RegisterVisitButton';
+import RegisterAsVisitorButton from '@/components/forms/VisitorRegistrationForm';
 
 const VisitorPage = () => {
   const ref = useRef(null);
@@ -306,10 +305,7 @@ const VisitorPage = () => {
                   EV aftermarket exhibition. Secure your spot today and be part of the electric revolution.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <RegisterToVisitButton 
-                    onClick={() => window.location.href = '/register-visitor'}
-                    className="px-8 py-4 text-lg"
-                  />
+                  <RegisterAsVisitorButton /> 
                 </div>
               </div>
             </motion.div>

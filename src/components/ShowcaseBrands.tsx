@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Store, TrendingUp, Users, ArrowRight, Zap, Award, Target } from 'lucide-react';
+import ClickToExhibitButton from './forms/ExhibitorRegistrationForm';
 
 const ShowcaseBrands = () => {
   const ref = useRef(null);
@@ -42,7 +43,7 @@ const ShowcaseBrands = () => {
 
   const productCategories = [
     'EV Spare Parts',
-    'Vehicle Accessories', 
+    'Vehicle Accessories',
     'EV Consumables',
     'Charging Infrastructure',
     'Batteries & Storage',
@@ -64,7 +65,7 @@ const ShowcaseBrands = () => {
     <section id="showcase-brands" className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -82,13 +83,13 @@ const ShowcaseBrands = () => {
               Showcase your Brands to <span className="text-gradient">Industry</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              The EVs are on the road. The first generation of EVs in India is aging. Warranty periods are ending, 
-              and the secondary market is exploding. EVTECHNICIA is your opportunity to establish your brand as 
+              The EVs are on the road. The first generation of EVs in India is aging. Warranty periods are ending,
+              and the secondary market is exploding. EVTECHNICIA is your opportunity to establish your brand as
               "go-to" supplier for EV spares and accessories before the market gets saturated.
             </p>
           </motion.div>
 
-    
+
 
           {/* Opportunities */}
           <motion.div
@@ -173,16 +174,11 @@ const ShowcaseBrands = () => {
                 Secure Your <span className="text-primary">Market Position</span>
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Don't miss this opportunity to establish your brand in India's rapidly growing EV aftermarket. 
+                Don't miss this opportunity to establish your brand in India's rapidly growing EV aftermarket.
                 Limited exhibition spaces available.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg font-medium btn-glow transition-all duration-300">
-                  Book Exhibition Space
-                </button>
-                <button className="px-8 py-3 border-2 border-primary/50 hover:border-primary bg-primary/10 hover:bg-primary/20 text-primary hover:text-primary-foreground rounded-lg font-medium transition-all duration-300">
-                  Download Brochure
-                </button>
+                <ClickToExhibitButton />
               </div>
             </div>
           </motion.div>

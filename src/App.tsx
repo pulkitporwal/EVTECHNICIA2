@@ -10,12 +10,16 @@ import ExhibitPage from "./pages/ExhibitPage";
 import VisitorPage from "./pages/VisitorPage";
 import MarketPage from "./pages/MarketPage";
 import DownloadsPage from "./pages/DownloadsPage";
+import OtherInformationPage from "./pages/OtherInformationPage";
+import ExhibitRegistrationPage from "./pages/ExhibitRegistrationPage";
+import VisitorRegistrationPage from "./pages/VisitorRegistrationPage";
 import NotFound from "./pages/NotFound";
+import { useState } from "react";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => {
+  return (<QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -25,15 +29,18 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/about-organizer" element={<AboutOrganizerPage />} />
           <Route path="/exhibit" element={<ExhibitPage />} />
+          <Route path="/exhibit-registration" element={<ExhibitRegistrationPage />} />
+          <Route path="/visitor-registration" element={<VisitorRegistrationPage />} />
           <Route path="/visitors" element={<VisitorPage />} />
           <Route path="/market" element={<MarketPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
+          <Route path="/other-information" element={<OtherInformationPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+)};
 
 export default App;

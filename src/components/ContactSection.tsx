@@ -1,9 +1,9 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Globe, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import BookStallButton from '@/components/buttons/BookStallButton';
-import RegisterToVisitButton from '@/components/buttons/RegisterToVisitButton';
+import RegisterAsVisitorButton from './forms/VisitorRegistrationForm';
+import ClickToExhibitButton from '@/components/forms/ExhibitorRegistrationForm';
 
 const contacts = [
   { name: 'Pallav Singh', phone: '+91-9711182040', email: 'pallav@sdpromomedia.com' },
@@ -14,12 +14,15 @@ const contacts = [
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [isExhibitorFormOpen, setIsExhibitorFormOpen] = useState(false);
+
 
   return (
     <section id="contact" className="relative py-16 sm:pb-20 sm:pt-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 circuit-pattern opacity-30" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -39,7 +42,7 @@ const ContactSection = () => {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Secure your space at India's premier EV components exhibition. Connect with our team for personalized assistance.
             </p>
-            
+
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,8 +50,8 @@ const ContactSection = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
             >
-              <BookStallButton />
-              <RegisterToVisitButton />
+              <ClickToExhibitButton />
+              <RegisterAsVisitorButton />
             </motion.div>
           </motion.div>
 
@@ -64,7 +67,7 @@ const ContactSection = () => {
                 <h3 className="font-orbitron text-xl font-semibold mb-6 text-foreground">
                   S D PROMO MEDIA PVT LTD
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
@@ -77,21 +80,21 @@ const ContactSection = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <p className="text-foreground/80">+91-20-2975517 / 18</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                       <Mail className="w-5 h-5 text-primary" />
                     </div>
                     <p className="text-foreground/80">info@sdpromomedia.com</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                       <Globe className="w-5 h-5 text-primary" />
@@ -157,8 +160,36 @@ const ContactSection = () => {
                 <h3 className="font-orbitron text-xl font-semibold mb-6 text-foreground">
                   Quick Inquiry
                 </h3>
-                
-                <form className="space-y-6">
+
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setStatus('loading');
+
+                    const form = e.currentTarget;
+                    const formData = new FormData(form);
+
+                    try {
+                      const res = await fetch('https://formspree.io/f/xbdlvejr', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                          Accept: 'application/json',
+                        },
+                      });
+
+                      if (res.ok) {
+                        setStatus('success');
+                        form.reset();
+                      } else {
+                        setStatus('error');
+                      }
+                    } catch (error) {
+                      setStatus('error');
+                    }
+                  }}
+                  className="space-y-6"
+                >
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-foreground/80 mb-2">
@@ -166,48 +197,84 @@ const ContactSection = () => {
                       </label>
                       <input
                         type="text"
+                        name="name"
+                        required
                         className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                         placeholder="Your name"
                       />
                     </div>
+
                     <div>
                       <label className="block text-sm font-medium text-foreground/80 mb-2">
                         Email
                       </label>
                       <input
                         type="email"
+                        name="email"
+                        required
                         className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                         placeholder="email@example.com"
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-foreground/80 mb-2">
                       Phone
                     </label>
                     <input
                       type="tel"
+                      name="phone"
                       className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground"
                       placeholder="+91-XXXXXXXXXX"
                     />
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-foreground/80 mb-2">
                       Message
                     </label>
                     <textarea
+                      name="message"
                       rows={4}
+                      required
                       className="w-full px-4 py-3 rounded-lg bg-muted border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground resize-none"
                       placeholder="Tell us about your requirements..."
                     />
                   </div>
-                  
-                  <Button variant="glow" size="lg" className="w-full">
-                    Submit Inquiry
+
+                  {/* Hidden subject */}
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Contact Inquiry - EV Technicia"
+                  />
+
+                  {/* Submit Button */}
+                  <Button
+                    type="submit"
+                    variant="glow"
+                    size="lg"
+                    disabled={status === 'loading'}
+                    className="w-full"
+                  >
+                    {status === 'loading' ? 'Sending...' : 'Submit Inquiry'}
                   </Button>
+
+                  {/* Status Messages */}
+                  {status === 'success' && (
+                    <p className="text-sm text-green-500 text-center mt-4">
+                      ✅ Thank you! Your inquiry has been sent successfully.
+                    </p>
+                  )}
+
+                  {status === 'error' && (
+                    <p className="text-sm text-red-500 text-center mt-4">
+                      ❌ Oops! Something went wrong. Please try again.
+                    </p>
+                  )}
                 </form>
+
               </div>
             </motion.div>
           </div>

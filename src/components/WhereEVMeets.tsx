@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Users, Building, Truck, Wrench, GraduationCap, Briefcase, Handshake, TrendingUp, Car, Zap, Shield, Award } from 'lucide-react';
+import RegisterAsVisitorButton from './forms/VisitorRegistrationForm';
 
 const WhereEVMeets = () => {
   const ref = useRef(null);
@@ -91,7 +92,7 @@ const WhereEVMeets = () => {
     <section id="where-ev-meets" className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -109,7 +110,7 @@ const WhereEVMeets = () => {
               Where India's EV OEM & <span className="text-gradient">Aftermarket Meets</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Is your business ready for Electric Vehicle customers? Visiting EVTECHNICIA allows you to future-proof your business 
+              Is your business ready for Electric Vehicle customers? Visiting EVTECHNICIA allows you to future-proof your business
               because customers who earlier bought petrol vehicles are buying an EV today.
             </p>
           </motion.div>
@@ -196,16 +197,11 @@ const WhereEVMeets = () => {
                 Join the <span className="text-primary">EV Revolution</span>
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                EVTECHNICIA is the only place where you can source specific inventory you need to cater to 
+                EVTECHNICIA is the only place where you can source specific inventory you need to cater to
                 electric vehicle owners. Join thousands of industry professionals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg font-medium btn-glow transition-all duration-300">
-                  Register to Visit
-                </button>
-                <button className="px-8 py-3 border-2 border-primary/50 hover:border-primary bg-primary/10 hover:bg-primary/20 text-primary hover:text-primary-foreground rounded-lg font-medium transition-all duration-300">
-                  Download Visitor Guide
-                </button>
+                <RegisterAsVisitorButton />
               </div>
             </div>
           </motion.div>
