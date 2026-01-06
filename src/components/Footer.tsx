@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Logo & Description */}
             <div className="md:col-span-2">
-              <a href="#" className="flex items-center gap-3 mb-4">
+              <a href="/" className="flex items-center gap-3 mb-4">
                 <div className="relative">
                   <img 
                     src={logo} 
@@ -51,11 +51,11 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#exhibitors" className="text-muted-foreground hover:text-primary transition-colors">Exhibitors</a></li>
-                <li><a href="#visitors" className="text-muted-foreground hover:text-primary transition-colors">Visitors</a></li>
-                <li><a href="#agenda" className="text-muted-foreground hover:text-primary transition-colors">Agenda</a></li>
-                <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="/exhibit-registration" className="text-muted-foreground hover:text-primary transition-colors">Exhibitors</a></li>
+                <li><a href="/visitor-registration" className="text-muted-foreground hover:text-primary transition-colors">Visitors</a></li>
+                <li><a href="/downloads" className="text-muted-foreground hover:text-primary transition-colors">Downloads</a></li>
+                <li><a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
               </ul>
             </div>
 
@@ -63,10 +63,10 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold text-foreground mb-4">Other Links</h3>
               <ul className="space-y-2">
-                <li><a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#refund" className="text-muted-foreground hover:text-primary transition-colors">Refund Policy</a></li>
-                <li><a href="#terms" className="text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
-                <li><a href="#sitemap" className="text-muted-foreground hover:text-primary transition-colors">Sitemap</a></li>
+                <li><a href="/other-information" className="text-muted-foreground hover:text-primary transition-colors">Other Information</a></li>
+                <li><a href="/market" className="text-muted-foreground hover:text-primary transition-colors">Market</a></li>
+                <li><a href="/visitors" className="text-muted-foreground hover:text-primary transition-colors">Visitor Info</a></li>
+                <li><a href="/exhibit" className="text-muted-foreground hover:text-primary transition-colors">Exhibit Info</a></li>
               </ul>
             </div>
           </div>
