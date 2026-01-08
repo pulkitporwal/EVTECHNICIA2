@@ -47,18 +47,22 @@ const ShowcaseBrands = () => {
     'EV Consumables',
     'Charging Infrastructure',
     'Batteries & Storage',
-    'Battery Management Systems',
+    'Battery Management System',
     'Retrofit & Upgrades',
     'Tools & Equipment',
+    "Intelligent EV Components",
     'Motors & Drives',
     'Inverters & Connectors',
     'Lightweight Materials',
     'Converters & Relays',
     'IoT Devices',
+    "Powering India's EV Revolution",
     'Testing Agencies',
     'Electric Components',
-    'Software & Technology',
     'Auto Entertainment',
+    'Software & Technology',
+    "Advanced Drive Systems",
+    "Smart Charging Infrastructure"
   ];
 
   return (
@@ -148,9 +152,9 @@ const ShowcaseBrands = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.4, delay: 1.0 + index * 0.02 }}
-                      className="text-center group"
+                      className="text-center group max-h-[90px] flex items-center justify-center"
                     >
-                      <div className="glow-card rounded-lg p-3 h-full hover:border-primary/50 transition-all duration-500">
+                      <div className="glow-card flex items-center justify-center flex-1 rounded-lg p-3 h-full hover:border-primary/50 transition-all duration-500">
                         <span className="text-xs text-foreground group-hover:text-primary transition-colors leading-tight">
                           {category}
                         </span>

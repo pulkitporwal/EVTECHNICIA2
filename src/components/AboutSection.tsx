@@ -8,22 +8,22 @@ const features = [
   {
     icon: Lightbulb,
     title: 'Innovation Showcase',
-    description: 'Discover cutting-edge EV components from batteries and motors to charging infrastructure and smart technology.',
+    description: 'Cutting-edge EV components, advanced batteries, drive systems, charging infrastructure, diagnostics, and smart mobility solutions. ',
   },
   {
     icon: Users,
     title: 'Networking Hub',
-    description: 'Connect with OEMs, Tier 1 suppliers, manufacturers, and industry experts to forge strategic partnerships.',
+    description: 'Direct engagement with OEMs, Tier-1 suppliers, manufacturers, service providers, policymakers, and industry experts.',
   },
   {
     icon: TrendingUp,
-    title: 'Market Insights',
-    description: 'Gain valuable knowledge about government regulations, market trends, and upcoming technological developments.',
+    title: 'Market & Policy Insights',
+    description: 'Actionable insights into government regulations, market trends, standards, and emerging EV technologies.',
   },
   {
     icon: Award,
     title: 'B2B Excellence',
-    description: 'Experience a dedicated business environment for manufacturers, service providers, and customers to interact.',
+    description: 'A focused trade-only environment enabling high-quality leads, partnerships, and Flong-term business growth.',
   },
 ];
 
@@ -40,21 +40,21 @@ const AnimatedCounter = ({ value, suffix = '', duration = 2000 }) => {
       if (value.toLowerCase().includes('k')) {
         targetValue = parseInt(value.replace('k', '')) * 1000;
       }
-      
+
       const startTime = Date.now();
-      
+
       const animate = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
+
         const currentCount = Math.floor(progress * targetValue);
         setCount(currentCount);
-        
+
         if (progress < 1) {
           requestAnimationFrame(animate);
         }
       };
-      
+
       requestAnimationFrame(animate);
     }
   }, [isInView, value, duration]);
@@ -82,7 +82,7 @@ const AboutSection = () => {
     <section id="about" className="relative py-16 sm:pb-20 sm:pt-16 md:py-20  overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 circuit-pattern opacity-50" />
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
@@ -100,7 +100,18 @@ const AboutSection = () => {
               About <span className="text-gradient">EVTECHNICIA</span>
             </h2>
             <p className="text-xs sm:text-base md:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">
-              EVTECHNICIA is India's first dedicated trade fair focused exclusively on the electric vehicle aftermarket where suppliers, manufacturers, and industry experts to network, demonstrate innovation, and talk about the future of the e-mobility industry. In India's quickly growing EV market, EVTECHNICIA showcase a variety of products, from batteries and motors to charging infrastructure and smart technology, encouraging collaborations and business expansion. A platform for showcasing cutting-edge goods and technologies, industry insights, and networking chances with decision-makers are some of the main advantages. The show focus on what happens after the vehicle leaves the showroom: service, spares, accessories and repair. 
+              EVTECHNICIA is India’s first dedicated trade fair exclusively focused on the
+              electric vehicle aftermarket. It brings together suppliers, manufacturers, technology
+              providers, and industry experts on a single, purpose-driven platform.
+            </p><p className="text-xs sm:text-base md:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">As India’s EV ecosystem accelerates, EVTECHNICIA presents a comprehensive
+              showcase of aftermarket solutions including batteries, motors, charging
+              infrastructure, diagnostics, service equipment, spares, accessories, and smart
+              technologies. The exhibition is uniquely positioned to address the complete post
+              showroom lifecycle—service, maintenance, repair, retrofitting, and upgrades.
+            </p><p className="text-xs sm:text-base md:text-lg text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">Designed to enable collaboration and commercial growth, EVTECHNICIA
+              delivers high-impact networking, live product demonstrations, and industry
+              insights—making it a definitive destination for shaping the future of India’s EV
+              aftermarket ecosystem.
             </p>
           </motion.div>
 
@@ -119,7 +130,7 @@ const AboutSection = () => {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center mb-4 sm:mb-5 group-hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-shadow duration-500">
                     <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
                   </div>
-                  
+
                   {/* Content */}
                   <h3 className="font-orbitron text-sm sm:text-base lg:text-lg font-semibold mb-2 sm:mb-3 text-foreground group-hover:text-primary transition-colors">
                     {feature.title}

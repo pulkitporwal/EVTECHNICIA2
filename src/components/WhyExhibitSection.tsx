@@ -111,16 +111,16 @@ const WhyExhibitSection = () => {
                     }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-background border-2 border-primary z-10">
+                  <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 -translate-x-[40%] w-4 h-4 rounded-full bg-background border-2 border-primary z-10">
                     <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20" />
                   </div>
 
                   {/* Content Card */}
                   <div className={`ml-16 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
                     }`}>
-                    <div className="glow-card rounded-2xl p-6 transition-all duration-500 hover:border-primary/50">
+                    <div className="glow-card relative rounded-2xl p-6 transition-all duration-500 hover:border-primary/50">
                       {/* Number Badge */}
-                      <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-xs font-bold font-orbitron">
+                      <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-blue-500/50 z-30">
                         {index + 1}
                       </div>
 

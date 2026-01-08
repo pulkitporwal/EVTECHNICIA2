@@ -85,7 +85,7 @@ const ContactSection = () => {
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
-                    <p className="text-foreground/80">+91-20-2975517 / 18</p>
+                    <p className="text-foreground/80">+91-20-2975517</p>
                   </div>
 
                   <div className="flex items-center gap-4">
@@ -104,24 +104,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="glow-card rounded-2xl overflow-hidden mb-8">
-                <h3 className="font-orbitron text-lg font-semibold p-6 pb-4 text-foreground">
-                  Find Us Here
-                </h3>
-                <div className="relative h-64 w-full">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8428429173!2d77.3664409!3d28.622677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdee78435895%3A0xf1fb31ac0639db0!2sNoida+One+IT+Park!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-b-2xl"
-                    title="S D Promo Media Office Location"
-                  />
-                </div>
-              </div>
-
+              
               {/* Contact Persons */}
               <div className="grid gap-4">
                 {contacts.map((contact, index) => (
@@ -137,14 +120,13 @@ const ContactSection = () => {
                     </div>
                     <div className="flex-1">
                       <p className="font-semibold text-foreground">{contact.name}</p>
-                      <p className="text-sm text-muted-foreground">{contact.phone}</p>
+                      {/* <p className="text-sm text-muted-foreground">{contact.phone}</p> */}
                     </div>
-                    <a
-                      href={`mailto:${contact.email}`}
+                    <p
                       className="text-sm text-primary hover:text-primary/80 transition-colors"
                     >
-                      Email
-                    </a>
+                      {contact.email}
+                    </p>
                   </motion.div>
                 ))}
               </div>

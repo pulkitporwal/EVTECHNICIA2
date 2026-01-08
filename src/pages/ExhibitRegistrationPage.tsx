@@ -97,33 +97,6 @@ const ExhibitRegistrationPage = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
-      
-      {/* Hero Section */}
-      <section id="exhibitor-registration" className="relative py-20 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 circuit-pattern opacity-30" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm mb-6">
-                Exhibitor Registration
-              </span>
-              <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
-                Register as <span className="text-gradient">Exhibitor</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Secure your space at India's premier EV components exhibition. Connect with thousands of industry professionals and showcase your products to the right audience.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Registration Form Section */}
       <section className="relative py-16 sm:pb-20 sm:pt-16 bg-dark-elevated/50 overflow-hidden">

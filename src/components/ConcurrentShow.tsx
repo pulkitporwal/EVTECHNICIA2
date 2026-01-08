@@ -27,33 +27,6 @@ const ConcurrentShow = () => {
     },
   ];
 
-  const comparison = [
-    {
-      aspect: 'Vehicle Coverage',
-      evtechnicia: 'Electric Vehicles Only',
-      autotechnicia: 'All Traditional Vehicles',
-      combined: '100% Market Coverage',
-    },
-    {
-      aspect: 'Technology Focus',
-      evtechnicia: 'EV Components & Aftermarket',
-      autotechnicia: 'Traditional Auto Parts',
-      combined: 'Complete Automotive Spectrum',
-    },
-    {
-      aspect: 'Business Model',
-      evtechnicia: 'Future-Ready Solutions',
-      autotechnicia: 'Established Supply Chains',
-      combined: 'Balanced Portfolio Strategy',
-    },
-    {
-      aspect: 'Market Position',
-      evtechnicia: 'First-Mover Advantage',
-      autotechnicia: 'Market Leadership',
-      combined: 'Dominant Market Presence',
-    },
-  ];
-
   return (
     <section id="concurrent-show" className="relative py-16 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
       {/* Background */}
@@ -107,54 +80,6 @@ const ConcurrentShow = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Comparison Table */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mb-16"
-          >
-            <h3 className="font-orbitron text-2xl font-bold text-center mb-8">
-              Complete <span className="text-primary">Market Coverage</span>
-            </h3>
-            <div className="max-w-5xl mx-auto">
-              <div className="glow-card rounded-2xl p-8">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-border/30">
-                        <th className="text-left py-3 px-4 text-sm font-semibold text-foreground">Aspect</th>
-                        <th className="text-center py-3 px-4 text-sm font-semibold text-primary">EVTECHNICIA</th>
-                        <th className="text-center py-3 px-4 text-sm font-semibold text-secondary">AUTOTECHNICIA</th>
-                        <th className="text-center py-3 px-4 text-sm font-semibold text-accent">Combined Advantage</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparison.map((item, index) => (
-                        <motion.tr
-                          key={item.aspect}
-                          initial={{ opacity: 0, x: -40 }}
-                          animate={isInView ? { opacity: 1, x: 0 } : {}}
-                          transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                          className="border-b border-border/20 hover:bg-primary/5 transition-colors"
-                        >
-                          <td className="py-4 px-4 text-sm text-foreground">{item.aspect}</td>
-                          <td className="py-4 px-4 text-sm text-center text-primary">{item.evtechnicia}</td>
-                          <td className="py-4 px-4 text-sm text-center text-secondary">{item.autotechnicia}</td>
-                          <td className="py-4 px-4 text-sm text-center">
-                            <span className="px-2 py-1 bg-accent/10 text-accent text-xs rounded-full font-medium">
-                              {item.combined}
-                            </span>
-                          </td>
-                        </motion.tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

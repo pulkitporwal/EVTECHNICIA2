@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Building, Users, Target, Award, Calendar, ArrowRight } from 'lucide-react';
+import { Building, Users, Target, Award, Calendar, ArrowRight, Eye } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactInfoSection from '@/components/ContactInfoSection';
@@ -26,15 +26,15 @@ const AboutOrganizerPage = () => {
             year: '----',
         },
         {
-            title: 'EV TECHNICIA',
-            description: 'Electric Vehicle Components Expo',
-            img: '/sd-events/ev-technicia-black.webp',
+            title: 'AUTO TECHNICIA',
+            description: 'Automotive Technology Exhibition',
+            img: '/sd-events/AT-Header-Logo-Large.webp',
             year: '----',
         },
         {
-            title: 'NEPAL LAB',
-            description: 'Nepal Laboratory Exhibition',
-            img: '/sd-events/NEPALLAB-2026-1.webp',
+            title: 'EV TECHNICIA',
+            description: 'Electric Vehicle Components Expo',
+            img: '/sd-events/ev-technicia-black.webp',
             year: '----',
         },
         {
@@ -44,21 +44,9 @@ const AboutOrganizerPage = () => {
             year: '----',
         },
         {
-            title: 'OPHTHALMIC',
-            description: 'Ophthalmic Medical Exhibition',
-            img: '/sd-events/Ophthall_2026-logo.webp',
-            year: '----',
-        },
-        {
             title: 'MEDICAL',
             description: 'Medical Equipment Expo',
             img: '/sd-events/india-med-expo.webp',
-            year: '----',
-        },
-        {
-            title: 'AUTO TECHNICIA',
-            description: 'Automotive Technology Exhibition',
-            img: '/sd-events/AT-Header-Logo-Large.webp',
             year: '----',
         },
         {
@@ -67,7 +55,20 @@ const AboutOrganizerPage = () => {
             img: '/sd-events/bangla-med-expo.webp',
             year: '----',
         },
+        {
+            title: 'NEPAL LAB',
+            description: 'Nepal Laboratory Exhibition',
+            img: '/sd-events/NEPALLAB-2026-1.webp',
+            year: '----',
+        },
+        {
+            title: 'OPHTHALMIC',
+            description: 'Ophthalmic Medical Exhibition',
+            img: '/sd-events/Ophthall_2026-logo.webp',
+            year: '----',
+        },
     ];
+
 
 
     const stats = [
@@ -197,24 +198,41 @@ const AboutOrganizerPage = () => {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-7xl mx-auto">
-                        <div ref={visionRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        {/* Section Header */}
+                        <motion.div
+                            ref={visionRef}
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={visionInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="text-center mb-12"
+                        >
+                            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-6">
+                                Vision & <span className="text-primary">Mission</span>
+                            </h2>
+                            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                        </motion.div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {/* Vision */}
                             <motion.div
                                 initial={{ opacity: 0, x: -40 }}
                                 animate={visionInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: 0.4 }}
                             >
-                                <div className="glow-card rounded-2xl p-8">
-                                    <h3 className="font-orbitron text-2xl font-bold mb-6 text-foreground">
+                                <div className="glow-card rounded-2xl p-6 h-full">
+                                    {/* Icon */}
+                                    <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 mb-4">
+                                        <Eye className="w-8 h-8 text-primary" />
+                                    </div>
+                                    
+                                    {/* Content */}
+                                    <h3 className="font-orbitron text-xl font-bold mb-3 text-foreground">
                                         Our <span className="text-primary">Vision</span>
                                     </h3>
-                                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                                        Our vision is to be the leading event organizer in India, providing a platform for businesses
-                                        to connect, collaborate, and grow.
+                                    <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-transparent mb-4"></div>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        To be India's leading event organizer, providing exceptional platforms for businesses to connect, collaborate, and grow.
                                     </p>
-                                    <div className="w-full h-64 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center border border-primary/20">
-                                        <Users className="w-16 h-16 text-primary" />
-                                    </div>
                                 </div>
                             </motion.div>
 
@@ -224,17 +242,20 @@ const AboutOrganizerPage = () => {
                                 animate={visionInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: 0.5 }}
                             >
-                                <div className="glow-card rounded-2xl p-8">
-                                    <h3 className="font-orbitron text-2xl font-bold mb-6 text-foreground">
+                                <div className="glow-card rounded-2xl p-6 h-full">
+                                    {/* Icon */}
+                                    <div className="flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-accent/20 to-accent/10 border border-accent/30 mb-4">
+                                        <Target className="w-8 h-8 text-accent" />
+                                    </div>
+                                    
+                                    {/* Content */}
+                                    <h3 className="font-orbitron text-xl font-bold mb-3 text-foreground">
                                         Our <span className="text-primary">Mission</span>
                                     </h3>
-                                    <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                                        Our mission is to create high-quality, innovative, and engaging events that provide maximum value
-                                        to our clients and attendees.
+                                    <div className="w-12 h-0.5 bg-gradient-to-r from-accent to-transparent mb-4"></div>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Create high-quality, innovative events that deliver maximum value to our clients and attendees.
                                     </p>
-                                    <div className="w-full h-64 bg-gradient-to-br from-accent/10 to-primary/10 rounded-xl flex items-center justify-center border border-accent/20">
-                                        <Target className="w-16 h-16 text-accent" />
-                                    </div>
                                 </div>
                             </motion.div>
                         </div>
@@ -264,7 +285,7 @@ const AboutOrganizerPage = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                               <ClickToExhibitButton />
+                                <ClickToExhibitButton />
                             </div>
                         </motion.div>
                     </div>

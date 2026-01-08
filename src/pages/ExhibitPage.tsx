@@ -40,7 +40,8 @@ const ExhibitPage = () => {
     'Tools & Equipment\'s',
     'Motors & Drives',
     'Inverters & Connectors',
-    'Lightweight Body/Chassis Materials',
+    'Lightweight Body',
+    'Chassis Materials',
     'Converters & Relays',
     'IOT Devices',
     'Testing Agencies & Institutions',
@@ -60,13 +61,13 @@ const ExhibitPage = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Navbar */}
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative py-20 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-30" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 40 }}
@@ -74,17 +75,14 @@ const ExhibitPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm mb-6">
+              <span className="inline-block px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-6">
                 Exhibit With Us
               </span>
-              <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
-                Access Buyers Who Actually <span className="text-gradient">Build & Service</span> Future
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Access Buyers Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Build & Service</span> the Future
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-12">
-                The Unique Advantage: The "Transition" Audience Most EV expos only attract EV enthusiasts. Because we run concurrently 
-                with AUTOTECHNICIA (focused on the aftermarket), exhibiting at EVTECHNICIA gives you exclusive access to a massive, 
-                untapped audience: Traditional Automotive Distributors and Workshop Owners who are actively looking to pivot their businesses to EV. 
-                These are buyers with existing capital, ready to stock your EV parts and invest in your charging infrastructure.
+              <p className="text-lg text-gray-300 mb-8">
+                The exclusive "transition" audience: Traditional automotive distributors and workshop owners actively pivoting to EV—with capital ready to invest.
               </p>
             </motion.div>
           </div>
@@ -92,7 +90,7 @@ const ExhibitPage = () => {
       </section>
 
       {/* Key Benefits */}
-      <section className="relative py-6 sm:pb-20 sm:pt-6 bg-dark-elevated/50 overflow-hidden">
+      <section className="relative py-6 sm:pt-6 bg-dark-elevated/50 overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -134,7 +132,7 @@ const ExhibitPage = () => {
       {/* Stats Section */}
       <section className="relative py-16 sm:pb-20 sm:pt-16 bg-gradient-to-b from-background to-dark-elevated/50 overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-20" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -184,7 +182,7 @@ const ExhibitPage = () => {
                   >
                     <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border border-primary/20">
                       <div className="text-center">
-                       <img src={`/exhibit-event-gallery/${item}.jpeg`} alt="Events Images" className='max-w-full max-h-full object-contain' />
+                        <img src={`/exhibit-event-gallery/${item}.jpeg`} alt="Events Images" className='max-w-full max-h-full object-contain' />
                       </div>
                     </div>
                   </motion.div>
@@ -220,7 +218,7 @@ const ExhibitPage = () => {
                     transition={{ duration: 0.4, delay: 0.7 + index * 0.03 }}
                     className="text-center group"
                   >
-                    <div className="glow-card rounded-xl p-4 h-full hover:border-primary/50 transition-all duration-500">
+                    <div className="glow-card rounded-xl p-4 max-h-[200px] hover:border-primary/50 transition-all duration-500">
                       <div className="w-8 h-8 mx-auto rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-3 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] transition-all duration-500">
                         <Building className="w-4 h-4 text-primary" />
                       </div>
@@ -251,7 +249,7 @@ const ExhibitPage = () => {
                   Ready to <span className="text-primary">Exhibit?</span>
                 </h3>
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Join the premier EV aftermarket exhibition and connect with thousands of qualified buyers looking to transition 
+                  Join the premier EV aftermarket exhibition and connect with thousands of qualified buyers looking to transition
                   their businesses to electric vehicles. Secure your booth today and gain access to the exclusive "transition" audience.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">

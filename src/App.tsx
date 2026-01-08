@@ -15,6 +15,7 @@ import ExhibitRegistrationPage from "./pages/ExhibitRegistrationPage";
 import VisitorRegistrationPage from "./pages/VisitorRegistrationPage";
 import NotFound from "./pages/NotFound";
 import { useState } from "react";
+import ContactPage from "./pages/ContactPage";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/market" element={<MarketPage />} />
           <Route path="/downloads" element={<DownloadsPage />} />
           <Route path="/other-information" element={<OtherInformationPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
 
           {/* Event Details */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 pt-8 border-t border-primary/10">
+          <div className="grid md:grid-cols-3 gap-8 mb-12 pt-8 border-t border-primary/10">
             <div>
               <h4 className="font-orbitron text-sm font-semibold text-foreground mb-4 uppercase tracking-wider">
                 Event Details
@@ -106,8 +106,28 @@ const Footer = () => {
                 <p className="text-foreground/80">Organized by S D Promo Media Pvt Ltd.</p>
               </div>
             </div>
+
+<div className="glow-card rounded-2xl overflow-hidden">
+              <h3 className="font-orbitron text-md font-semibold p-1 px-5 text-foreground">
+                Find Us Here
+              </h3>
+              <div className="relative h-auto w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8428429173!2d77.3664409!3d28.622677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfdee78435895%3A0xf1fb31ac0639db0!2sNoida+One+IT+Park!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-b-2xl"
+                  title="S D Promo Media Office Location"
+                />
+              </div>
+            </div>
+
           </div>
 
+          
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-primary/10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
