@@ -1,40 +1,65 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Phone, Mail, User, Users, Megaphone, Camera } from 'lucide-react';
+import { Megaphone, Users, User, Camera, Phone, Mail } from 'lucide-react';
 
 const contactCategories = [
   {
     title: 'Sales & Sponsorship',
     icon: Megaphone,
     contacts: [
-      { name: 'Ashish Agarwal', phone: '+91 98110 20784', email: 'ashish.a@iegroup.net' },
-      { name: 'Jitin Masand', phone: '+91 98733 99884', email: 'jitin.masand@iegroup.net' },
-      { name: 'Rohit Agarwal', phone: '+91 93122 04073', email: 'rohit.agarwal@iegroup.net' },
+      {
+        name: 'Pallav Singh',
+        phone: '+91 8130990660',
+        email: 'pallav@sdpromomedia.com',
+      },
+      {
+        name: 'Anurodh Parashar',
+        phone: '+91 8130998383',
+        email: 'anurodh@sdpromomedia.com',
+      },
+      {
+        name: 'Rohit Bisht',
+        phone: '+91 8178903508',
+        email: 'rohit@sdpromomedia.com',
+      },
     ],
   },
   {
     title: 'Visitor',
     icon: Users,
     contacts: [
-      { name: 'Harsh Vardhan', phone: '+91 84477 92704', email: 'harsh.vardhan@iegroup.net' },
-      { name: 'Rashmikant Mistry', phone: '+91 87795 82257', email: 'rashmikant.mistry@iegroup.net' },
-      { name: 'Saurav Khatri', phone: '+91 93549 41411', email: 'saurav.khatri@iegroup.net' },
+      {
+        name: 'Rekha Chaturvedi',
+        phone: '+91 9599011258',
+        email: 'rekha@sdpromomedia.com',
+      },
+      {
+        name: 'Heena',
+        phone: '+91 8130990666',
+        email: 'heena@sdpromomedia.com',
+      },
     ],
   },
   {
     title: 'Conference & Speakers',
     icon: User,
     contacts: [
-      { name: 'Swati Saxena', phone: '+91 98739 46764', email: 'swati.saxena@iegroup.net' },
-      { name: 'Anjali Pandey', phone: '+91 84478 39489', email: 'anjali.pandey@iegroup.net' },
+      {
+        name: 'Vivek Vikram',
+        phone: '+91 9312112656',
+        email: 'vivek@sdpromomedia.com',
+      },
     ],
   },
   {
     title: 'Media & Operations',
     icon: Camera,
     contacts: [
-      { name: 'Jitin Masand', phone: '+91 98733 99884', email: 'jitin.masand@iegroup.net' },
-      { name: 'Swati Saxena', phone: '+91 98739 46764', email: 'swati.saxena@iegroup.net' },
+      {
+        name: 'Rajesh K Sharma',
+        phone: '+91 9212067341',
+        email: 'rajesh@sdpromomedia.com',
+      },
     ],
   },
 ];
