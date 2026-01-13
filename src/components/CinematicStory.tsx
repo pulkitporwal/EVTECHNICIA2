@@ -197,7 +197,7 @@ export default function CinematicStory() {
         return (
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-primary/30 rounded-full blur-2xl opacity-60 animate-pulse" />
-            <div className="relative w-80 h-80 rounded-full border-8 border-secondary/60 shadow-2xl bg-gradient-to-br from-secondary/20 to-primary/20 backdrop-blur-sm">
+            <div className="relative w-96 h-96 rounded-full border-8 border-secondary/60 shadow-2xl bg-gradient-to-br from-secondary/20 to-primary/20 backdrop-blur-sm">
               <div className="absolute inset-6 rounded-full border-4 border-secondary/40" />
               <div className="absolute inset-12 rounded-full border-2 border-secondary/30" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -229,7 +229,7 @@ export default function CinematicStory() {
         return (
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/30 to-secondary/30 rounded-3xl blur-2xl opacity-60 animate-pulse" />
-            <div className="relative w-80 h-80 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-primary/30 glow-card">
+            <div className="relative w-96 h-96 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl shadow-2xl p-6 border border-primary/30 glow-card">
               <div className="grid grid-cols-4 gap-3 h-full">
                 {[...Array(16)].map((_, i) => (
                   <div 

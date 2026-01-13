@@ -18,6 +18,7 @@ const DownloadsPage = () => {
       description: 'Explore event highlights, exhibitor listings, and must-know details',
       action: 'Download Now',
       filePath: '/documents/brochure.pdf',
+      driveLink: 'https://drive.google.com/file/d/1gcStQBSJ0tTl5bbAiWliTp--niE_-jLm'
     },
     {
       icon: FileText,
@@ -25,6 +26,7 @@ const DownloadsPage = () => {
       description: 'Complete contract for booth booking and participation',
       action: 'Download Now',
       filePath: '/documents/domestic-contract-form.pdf',
+      driveLink: 'https://drive.google.com/file/d/1i1taJzFWyLQXD2BdSaUmAlJFv5_DqoIi'
     },
     {
       icon: FileText,
@@ -32,6 +34,7 @@ const DownloadsPage = () => {
       description: 'For international exhibitors participation',
       action: 'Download Now',
       filePath: '/documents/international-contract-form.pdf',
+      driveLink: 'https://drive.google.com/file/d/1Ql-zi2KARRGxW1u7jr906GaUUpUycIJn'
     },
     {
       icon: Shield,
@@ -39,6 +42,7 @@ const DownloadsPage = () => {
       description: 'Get familiar with event rules and safety protocols',
       action: 'Download Now',
       filePath: '/documents/rulesandregulations.pdf',
+      driveLink: 'https://drive.google.com/file/d/1nWboxYxFp_-IZl-ZWKSdjht8iW7tAcmb'
     },
   ];
 
@@ -131,8 +135,7 @@ const DownloadsPage = () => {
                     {download.description}
                   </p>
                   <a
-                    href={download.filePath}
-                    download
+                    href={download.driveLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-lg transition-all duration-300 flex items-center mx-auto group"
