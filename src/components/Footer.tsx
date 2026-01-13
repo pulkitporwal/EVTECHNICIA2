@@ -101,7 +101,7 @@ const Footer = () => {
                 Contact Info
               </h4>
               <div className="space-y-2 text-sm">
-                <p className="text-foreground/80">0120 297 5517</p>
+                <p className="text-foreground/80">+91-120-2975517 / +91-120-2975518</p>
                 <p className="text-foreground/80">info@sdpromomedia.com</p>
                 <p className="text-foreground/80">Organized by S D Promo Media Pvt Ltd.</p>
               </div>
